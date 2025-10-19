@@ -209,7 +209,7 @@ const BlogCard = ({ blog, onFavorite }) => {
       <CardHeader className="blog-card-header">
         <div className="blog-author">
           <Avatar className="author-avatar">
-            <AvatarImage src={blog.profile_pic ? `${BACKEND_URL}/uploads/${blog.profile_pic}` : ''} />
+            <AvatarImage src={blog.profile_pic ? `${BACKEND_URL}${blog.profile_pic}` : ''} />
             <AvatarFallback>{blog.username[0].toUpperCase()}</AvatarFallback>
           </Avatar>
           <div>
@@ -615,7 +615,7 @@ const BlogDetailPage = () => {
           <div className="article-meta">
             <div className="blog-author">
               <Avatar>
-                <AvatarImage src={blog.profile_pic ? `${BACKEND_URL}/uploads/${blog.profile_pic}` : ''} />
+                <AvatarImage src={blog.profile_pic ? `${BACKEND_URL}${blog.profile_pic}` : ''} />
                 <AvatarFallback>{blog.username[0].toUpperCase()}</AvatarFallback>
               </Avatar>
               <div>
@@ -660,7 +660,7 @@ const BlogDetailPage = () => {
           {comments.map(comment => (
             <div key={comment.id} className="comment" data-testid="comment-item">
               <Avatar className="comment-avatar">
-                <AvatarImage src={comment.profile_pic ? `${BACKEND_URL}/uploads/${comment.profile_pic}` : ''} />
+                <AvatarImage src={comment.profile_pic ? `${BACKEND_URL}${comment.profile_pic}` : ''} />
                 <AvatarFallback>{comment.username[0].toUpperCase()}</AvatarFallback>
               </Avatar>
               <div className="comment-content">
@@ -765,7 +765,7 @@ const ProfilePage = ({ user, setUser }) => {
             className="profile-banner"
             style={{
               backgroundImage: user.banner_pic 
-                ? `url(${BACKEND_URL}/uploads/${user.banner_pic})` 
+                ? `url(${BACKEND_URL}${user.banner_pic})` 
                 : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
             }}
           >
@@ -784,7 +784,7 @@ const ProfilePage = ({ user, setUser }) => {
         <div className="profile-info">
           <div className="profile-avatar-container">
             <Avatar className="profile-avatar">
-              <AvatarImage src={user.profile_pic ? `${BACKEND_URL}/uploads/${user.profile_pic}` : ''} />
+              <AvatarImage src={user.profile_pic ? `${BACKEND_URL}${user.profile_pic}` : ''} />
               <AvatarFallback>{user.username[0].toUpperCase()}</AvatarFallback>
             </Avatar>
             <label className="avatar-edit" data-testid="profile-pic-upload-label">
