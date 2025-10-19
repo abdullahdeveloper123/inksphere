@@ -765,7 +765,7 @@ const ProfilePage = ({ user, setUser }) => {
             className="profile-banner"
             style={{
               backgroundImage: user.banner_pic 
-                ? `url(${BACKEND_URL}/uploads/${user.banner_pic}?t=${Date.now()})` 
+                ? `url(${BACKEND_URL}/uploads/${user.banner_pic})` 
                 : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
             }}
           >
@@ -784,7 +784,7 @@ const ProfilePage = ({ user, setUser }) => {
         <div className="profile-info">
           <div className="profile-avatar-container">
             <Avatar className="profile-avatar">
-              <AvatarImage src={user.profile_pic ? `${BACKEND_URL}/uploads/${user.profile_pic}?t=${Date.now()}` : ''} />
+              <AvatarImage src={user.profile_pic ? `${BACKEND_URL}/uploads/${user.profile_pic}` : ''} />
               <AvatarFallback>{user.username[0].toUpperCase()}</AvatarFallback>
             </Avatar>
             <label className="avatar-edit" data-testid="profile-pic-upload-label">
